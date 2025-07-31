@@ -1,0 +1,803 @@
+.contact-page-container {
+  max-width: 900px;
+  margin: 32px auto;
+  padding: 24px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px #0001;
+}
+
+.contact-header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+
+.contact-categories {
+  display: flex;
+  gap: 12px;
+}
+
+.category-btn {
+  background: #e3f2fd;
+  color: #1976d2;
+  border: none;
+  padding: 8px 22px;
+  border-radius: 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.category-btn.active,
+.category-btn:hover {
+  background: #1976d2;
+  color: #fff;
+}
+
+.contact-search-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.contact-search-bar input {
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: 1px solid #bbb;
+  font-size: 1rem;
+  width: 260px;
+}
+
+.btn-cari {
+  background: #1976d2;
+  color: #fff;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.btn-cari:hover {
+  background: #1256a3;
+}
+
+.btn-sync {
+  background: #e3f2fd;
+  color: #1976d2;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.btn-sync:hover {
+  background: #1976d2;
+  color: #fff;
+}
+
+.btn-add {
+  background: #1976d2;
+  color: #fff;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn-add:hover {
+  background: #1256a3;
+}
+
+.btn-cancel {
+  background: #e0e0e0;
+  color: #333;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  margin-left: 8px;
+}
+
+.btn-cancel:hover {
+  background: #bdbdbd;
+}
+
+/* Modal Edit */
+.modal-edit {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(30, 42, 70, 0.15);
+  animation: fadeIn 0.2s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.modal-content {
+  background: linear-gradient(135deg, #e3f0ff 0%, #f9f9f9 100%);
+  padding: 32px 28px 24px 28px;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px #0002;
+  z-index: 1001;
+  min-width: 320px;
+  max-width: 95vw;
+  width: 100%;
+  max-width: 400px;
+  position: relative;
+  animation: popIn 0.2s;
+}
+
+@keyframes popIn {
+  from { transform: scale(0.95); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+
+/* Center title untuk modal */
+.modal-content h2,
+.modal-content h3 {
+  text-align: center;
+  margin: 0 0 20px 0;
+  font-size: 24px;
+  font-weight: bold;
+  color: #1976d2;
+}
+
+/* Khusus untuk modal title */
+.modal-title {
+  text-align: center !important;
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #1976d2;
+}
+
+.modal-content h3 {
+  margin-top: 0;
+  color: #1976d2;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #1976d2;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.modal-close-btn:hover {
+  color: #d32f2f;
+}
+
+.modal-content form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.modal-content input,
+.modal-content select {
+  padding: 10px 12px;
+  border-radius: 7px;
+  border: 1px solid #b0b0b0;
+  font-size: 1rem;
+  background: #f7fbff;
+  transition: border 0.2s;
+}
+.modal-content input:focus,
+.modal-content select:focus {
+  border: 1.5px solid #1976d2;
+  outline: none;
+}
+
+.modal-content button[type="submit"] {
+  background: #1976d2;
+  color: #fff;
+  border: none;
+  padding: 10px 0;
+  border-radius: 7px;
+  font-size: 1rem;
+  margin-top: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.modal-content button[type="submit"]:hover {
+  background: #1256a3;
+}
+
+.modal-content button[type="button"] {
+  background: #eee;
+  color: #333;
+  border: none;
+  padding: 10px 0;
+  border-radius: 7px;
+  font-size: 1rem;
+  margin-top: 4px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.modal-content button[type="button"]:hover {
+  background: #d32f2f;
+  color: #fff;
+}
+
+/* Placeholder input di dark mode */
+.theme-dark .modal-content input::placeholder,
+.theme-dark .modal-content textarea::placeholder {
+  color: #e0e0e0 !important;
+  opacity: 1;
+}
+
+/* Label/ikon upload di dark mode */
+.theme-dark .modal-content label,
+.theme-dark .modal-content .upload-label,
+.theme-dark .modal-content .upload-icon {
+  color: #ffe082 !important;
+}
+
+/* Tombol Batal di dark mode */
+.theme-dark .modal-content .btn-cancel {
+  background: #374151 !important;
+  color: #f6f5f3 !important;
+  border: 1px solid #555 !important;
+}
+
+/* Modal settings dark mode */
+.theme-dark .modal-content {
+  background: #232b3a !important;
+  color: #f3f6fa !important;
+}
+
+.theme-dark .modal-content label,
+.theme-dark .modal-content h3,
+.theme-dark .modal-content select,
+.theme-dark .modal-content option {
+  color: #f3f6fa !important;
+}
+
+.theme-dark .modal-content input,
+.theme-dark .modal-content select,
+.theme-dark .modal-content textarea {
+  background: #232b3a !important;
+  color: #f3f6fa !important;
+  border: 1px solid #3a4252 !important;
+}
+
+/* Navbar */
+.navbar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 1000;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 18px 0 18px 8px;
+  font-size: 1.2rem;
+  border-bottom: 1px solid #e3f2fd;
+  box-sizing: border-box;
+}
+.menu-icon {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #1976d2;
+  cursor: pointer;
+  margin-right: 4px;
+}
+.brand-name {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #1976d2;
+  letter-spacing: 1px;
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 0; left: 0; bottom: 0;
+  width: 290px;
+  background: linear-gradient(135deg, #e3f2fd 0%, #fff 100%);
+  box-shadow: 2px 0 24px #0002;
+  z-index: 2000;
+  padding: 32px 20px 24px 20px;
+  animation: slideIn 0.22s;
+  border-top-right-radius: 18px;
+  border-bottom-right-radius: 18px;
+  display: flex;
+  flex-direction: column;
+}
+@keyframes slideIn {
+  from { transform: translateX(-100%); opacity: 0.5; }
+  to   { transform: translateX(0); opacity: 1; }
+}
+.sidebar-close {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #1976d2;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.sidebar-close:hover {
+  color: #d32f2f;
+}
+.sidebar-title {
+  margin-top: 0;
+  color: #1976d2;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  margin-bottom: 18px;
+  text-align: left;
+}
+.sidebar-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: none;
+  border: none;
+  color: #1976d2;
+  font-size: 1.15rem;
+  padding: 12px 10px;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  border-radius: 9px;
+  transition: background 0.18s, color 0.18s;
+  font-weight: 500;
+  position: relative;
+}
+.sidebar-link:hover, .sidebar-link:focus {
+  background: #1976d2;
+  color: #fff;
+}
+.sidebar-link:hover .sidebar-icon,
+.sidebar-link:focus .sidebar-icon {
+  color: #fff;
+}
+.sidebar-icon {
+  font-size: 1.7em;
+  display: flex;
+  align-items: center;
+  transition: color 0.18s;
+}
+.sidebar-text {
+  flex: 1;
+}
+.sidebar-desc {
+  font-size: 0.97em;
+  color: #5a5a5a;
+  margin-left: 44px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  line-height: 1.3;
+}
+.sidebar-backdrop {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: #0004;
+  z-index: 1999;
+}
+
+/* Jarak antar tombol di form */
+form .btn-add,
+form .btn-cancel {
+  padding: 8px 8px;
+  border-radius: 8px;
+  margin-right: 12px;
+  font-size: 1rem;
+}
+
+/* Jika ingin jarak hanya antar tombol, gunakan flex dan gap */
+.modal-content form > div {
+  display: flex;
+  gap: 16px;
+}
+
+/* Tema Gelap */
+.theme-dark {
+  background: #232b3a !important; /* biru gelap, tidak terlalu hitam */
+  color: #f3f6fa !important;
+}
+
+.theme-dark .contact-table {
+  background: #263043;
+  color: #f3f6fa;
+}
+
+.theme-dark th {
+  background: #232b3a;
+  color: #ffe082;
+  border-bottom: 2px solid #3a4252;
+}
+
+.theme-dark td {
+  background: #263043;
+  color: #f3f6fa;
+  border-color: #3a4252;
+}
+
+.theme-dark .navbar {
+  background: #232b3a;
+  color: #ffe082;
+  border-bottom: 1px solid #3a4252;
+}
+
+/* Tambahkan background khusus di area logo navbar */
+.theme-dark .navbar .brand-logo {
+  background: rgba(255,255,255,0.92); /* putih transparan */
+  border-radius: 10px;
+  padding: 6px 18px 6px 12px;
+  display: inline-flex;
+  align-items: center;
+  box-shadow: 0 2px 12px 0 rgba(30,40,60,0.10);
+  /* Tambahan efek blur jika ingin lebih modern: */
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  /* Batas bawah tipis agar tidak terlalu menonjol */
+  border-bottom: 1.5px solid #e3f2fd;
+}
+
+/* Tombol unggah foto di modal dark mode */
+.theme-dark .modal-content .upload-label,
+.theme-dark .modal-content .upload-label span,
+.theme-dark .modal-content .upload-label i {
+  color: #222 !important;   /* hitam */
+  font-weight: bold;
+  text-shadow: none;
+}
+
+/* Ukuran font global */
+.font-small {
+  font-size: 0.92rem;
+}
+.font-normal {
+  font-size: 1rem;
+}
+.font-large {
+  font-size: 1.15rem;
+}
+
+/* Jika ingin lebih spesifik, bisa tambahkan untuk elemen tertentu */
+.font-small .contact-table,
+.font-small .modal-content { font-size: 0.92rem; }
+.font-normal .contact-table,
+.font-normal .modal-content { font-size: 1rem; }
+.font-large .contact-table,
+.font-large .modal-content { font-size: 1.15rem; }
+
+/* Sidebar dark mode */
+.theme-dark .sidebar {
+  background: #232b3a !important;
+  color: #f3f6fa !important;
+}
+
+.theme-dark .sidebar-title {
+  color: #ffe082 !important;
+}
+
+.theme-dark .sidebar-link,
+.theme-dark .sidebar-link .sidebar-text,
+.theme-dark .sidebar-link .sidebar-icon {
+  color: #f3f6fa !important;
+  background: none !important;
+}
+
+.theme-dark .sidebar-link:hover,
+.theme-dark .sidebar-link:focus {
+  background: #263043 !important;
+  color: #ffe082 !important;
+}
+
+.theme-dark .sidebar-close {
+  color: #ffe082 !important;
+}
+
+/* Pagination styles - Desktop */
+.pagination-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+  margin: 16px 0;
+}
+
+.pagination-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pagination-controls button {
+  min-width: 36px;
+  height: 36px;
+  border: 1px solid #ddd;
+  background: white;
+  cursor: pointer;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.pagination-controls button:hover:not(:disabled) {
+  background: #f0f0f0;
+  border-color: #1976d2;
+}
+
+.pagination-controls button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pagination-controls span {
+  margin: 0 12px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+/* Desktop version - tampilkan detailed info */
+.pagination-info-desktop {
+  display: block;
+  font-size: 14px;
+  color: #666;
+}
+
+/* Mobile responsive (< 600px) - Tombol lebih besar dan center */
+@media (max-width: 599px) {
+  .pagination-container {
+    justify-content: center; /* Center di mobile */
+    padding: 20px 8px; /* Padding lebih besar */
+    margin: 20px 0;
+    background: #f8f9fa; /* Background untuk highlight */
+    border-radius: 12px;
+  }
+
+  .pagination-controls {
+    gap: 12px; /* Gap lebih besar */
+  }
+
+  .pagination-controls button {
+    min-width: 48px; /* Tombol lebih besar untuk touch */
+    height: 48px;
+    font-size: 18px; /* Font lebih besar */
+    border-radius: 8px;
+    font-weight: 600;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Shadow untuk depth */
+  }
+
+  .pagination-controls button:active {
+    transform: scale(0.95); /* Feedback saat ditekan */
+  }
+
+  .pagination-controls span {
+    margin: 0 16px; /* Margin lebih besar */
+    font-size: 20px; /* Font lebih besar */
+    font-weight: bold;
+    color: #1976d2;
+  }
+
+  /* Sembunyikan info di mobile */
+  .pagination-info-desktop {
+    display: none !important;
+  }
+}
+
+/* Theme dark untuk pagination */
+.theme-dark .pagination-controls button {
+  background: #444;
+  border-color: #555;
+  color: #fff;
+}
+
+.theme-dark .pagination-controls button:hover:not(:disabled) {
+  background: #555;
+  border-color: #1976d2;
+}
+
+.theme-dark .pagination-controls span {
+  color: #fff;
+}
+
+.theme-dark .pagination-info-desktop {
+  color: #ccc;
+}
+
+/* Mobile dark theme */
+@media (max-width: 599px) {
+  .theme-dark .pagination-container {
+    background: #2a2a2a;
+  }
+  
+  .theme-dark .pagination-controls span {
+    color: #64b5f6;
+  }
+  
+  .theme-dark .pagination-controls button {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  }
+}
+
+/* Area kontrol di atas tabel */
+.table-controls {
+  display: flex;
+  justify-content: flex-end; /* Pastikan button di kanan */
+  align-items: center;
+  margin: 16px 0;
+  padding: 0 4px;
+  width: 100%;
+}
+
+/* Button Tambah Kontak di atas tabel */
+.btn-add-contact-table {
+  background: #1976d2;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  box-shadow: 0 2px 4px rgba(25, 118, 210, 0.2);
+  margin-left: auto; /* Tambahan untuk memastikan di kanan */
+}
+
+.btn-add-contact-table:hover {
+  background: #1565c0;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(25, 118, 210, 0.3);
+}
+
+.btn-add-contact-table:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(25, 118, 210, 0.2);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .table-controls {
+    justify-content: center; /* Di mobile tetap center */
+  }
+  
+  .btn-add-contact-table {
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 10px;
+    margin-left: 0; /* Reset margin di mobile */
+  }
+}
+
+/* Dark theme */
+.theme-dark .btn-add-contact-table {
+  background: #64b5f6;
+  color: #121212;
+}
+
+.theme-dark .btn-add-contact-table:hover {
+  background: #42a5f5;
+}
+
+/* Hapus atau update button di header jika tidak diperlukan */
+.btn-add-contact {
+  /* Style untuk button di header jika masih ada */
+  background: #1976d2;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* Container untuk alphabet filter dan button tambah kontak */
+.alpha-controls-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 16px 0;
+  gap: 16px;
+}
+
+/* Button Tambah Kontak di samping alphabet */
+.btn-add-contact-table {
+  background: #1976d2;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  box-shadow: 0 2px 4px rgba(25, 118, 210, 0.2);
+  flex-shrink: 0; /* Tidak mengecil */
+}
+
+.btn-add-contact-table:hover {
+  background: #1565c0;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(25, 118, 210, 0.3);
+}
+
+.btn-add-contact-table:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(25, 118, 210, 0.2);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .alpha-controls-container {
+    flex-direction: column;
+    gap: 12px;
+    align-items: stretch;
+  }
+  
+  .btn-add-contact-table {
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 10px;
+    order: -1; /* Button di atas alphabet di mobile */
+  }
+}
+
+/* Dark theme */
+.theme-dark .btn-add-contact-table {
+  background: #64b5f6;
+  color: #121212;
+}
+
+.theme-dark .btn-add-contact-table:hover {
+  background: #42a5f5;
+}
+
+/* Hapus atau comment table-controls yang lama jika tidak digunakan */
+/*
+.table-controls {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 16px 0;
+  padding: 0 4px;
+  width: 100%;
+}
+*/
+

@@ -1,0 +1,174 @@
+html, body {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.landing-container {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.landing-gradient-bg {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Hanya nonaktifkan scroll di landing page */
+body.landing-no-scroll {
+  overflow: hidden !important;
+}
+
+.landing-bg-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    linear-gradient(to right, #e3f0fd 0%, #b3caff 40%, rgba(179,202,255,0.5) 60%, rgba(255,255,255,0.0) 100%),
+    url("/public/img/lp.png") center center/cover no-repeat;
+  z-index: 0;
+}
+
+.landing-gradient-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, #e3f0fdcc 0%, #b3caffcc 100%);
+  z-index: 1;
+}
+
+.landing-header {
+  width: 100%;
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  background: transparent;
+  padding: 32px 0 0 32px;
+}
+
+.menu-logo {
+  display: flex;
+  align-items: center;
+}
+
+.menu-icon {
+  font-size: 2rem;
+  cursor: pointer;
+  color: #1976d2;
+}
+
+.logo {
+  height: 80px;
+}
+
+.brand-name {
+  font-size: 1.7rem;
+  font-weight: bold;
+  color: #1976d2;
+  letter-spacing: 1px;
+}
+
+.landing-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  position: relative;
+  margin-top: 0;
+  min-height: 0;
+}
+
+.landing-main.left-align {
+  align-items: flex-start;
+  justify-content: center;
+  padding-left: 8vw;
+  padding-top: 0;
+  height: 100vh;
+  min-height: 0;
+}
+
+.landing-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #1976d2;
+  margin-bottom: 18px;
+  text-align: center;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.big-title {
+  font-size: 4rem;
+  font-weight: 800;
+  color: #24518a;
+  margin-bottom: 18px;
+  text-align: left;
+  letter-spacing: 2px;
+}
+
+.landing-desc {
+  font-size: 1.2rem;
+  color: #222b3a;
+  max-width: 600px;
+  margin-bottom: 32px;
+  text-align: center;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.big-desc {
+  font-size: 1.2rem;
+  color: #24518a;
+  margin-bottom: 32px;
+  text-align: left;
+  max-width: 520px;
+}
+
+.btn-mulai {
+  background: #1976d2;
+  color: #fff;
+  border: none;
+  padding: 14px 36px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-mulai:hover {
+  background: #1256a3;
+}
+
+.big-btn {
+  background: #24518a;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 16px 32px;
+  border: none;
+  border-radius: 32px;
+  cursor: pointer;
+  margin-top: 16px;
+  box-shadow: 0 2px 8px rgba(36,81,138,0.12);
+  text-align: left;
+}
+
+.landing-gradient {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, #e3f0fdcc 0%, #b3caffcc 100%);
+  z-index: 1;
+}

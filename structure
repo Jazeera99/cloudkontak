@@ -1,0 +1,26 @@
+c:\apps\www\cloudkontak\
+├── src/
+│   ├── components/
+│   │   ├── ContactList.jsx       
+│   │   ├── ContactAlphaFilter.jsx 
+│   │   ├── Navbar.jsx          
+│   │   ├── Sidebar.jsx          
+│   │   ├── Toast.jsx            
+│   │   └── Modal/
+│   │       ├── ModalAdd.jsx    
+│   │       ├── ModalEdit.jsx  
+│   │       ├── ModalDelete.jsx 
+│   │       ├── ModalProfile.jsx  
+│   │       ├── ModalSettings.jsx
+│   │       └── Label.jsx      
+│   ├── pages/
+│   │   ├── Home.jsx             
+│   │   ├── ContactPage.jsx      
+│   │   └── NotFound.jsx         
+│   ├── services/
+│   │   └── kontak.js            
+│   ├── App.jsx                   
+│   └── main.jsx                  
+├── public/
+├── package.json
+└── vite.config.js

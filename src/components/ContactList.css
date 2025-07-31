@@ -1,0 +1,492 @@
+/* C:\apps\www\cloudkontak\src\components\ContactList.css */
+
+.contact-list-container {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06); /* Mengubah #0001 menjadi rgba untuk kompatibilitas */
+  padding: 24px;
+  margin-top: 16px;
+  overflow-x: auto; /* Pertahankan ini untuk responsivitas */
+  overflow: visible !important;
+  position: relative;
+}
+
+/* .contact-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 16px;
+}
+
+.contact-table th,
+.contact-table td {
+  padding: 12px 8px; /* Menggunakan padding Anda */
+  /* text-align: left;
+  border-bottom: 1px solid #eee; /* Menggunakan border-bottom Anda */
+/* } */
+
+/* .contact-table th {
+  background-color: #f8f8f8; /* Menambahkan background untuk header tabel dari saran saya */
+  /* text-align: center;
+} */
+
+.contact-info {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* Menggunakan gap Anda */
+}
+
+/* Gaya untuk avatar (baik gambar maupun inisial) */
+.avatar {
+  width: 40px; /* Menggunakan ukuran avatar Anda */
+  height: 40px; /* Menggunakan ukuran avatar Anda */
+  border-radius: 50%;
+  object-fit: cover; /* Penting untuk gambar agar tidak distorsi */
+  background: #e0e0e0; /* Background default untuk inisial atau jika gambar tidak ada */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #555;
+  font-size: 18px; /* Ukuran font untuk inisial */
+  flex-shrink: 0; /* Mencegah avatar mengecil pada layar sempit */
+}
+
+/* Gaya khusus untuk avatar yang menampilkan inisial */
+.avatar-initials {
+  /* Ini bisa sama dengan .avatar jika Anda ingin ukuran yang sama */
+  /* atau bisa diatur ulang jika Anda ingin inisial lebih kecil dari gambar */
+  width: 40px; /* Menyamakan dengan ukuran avatar utama */
+  height: 40px; /* Menyamakan dengan ukuran avatar utama */
+  border-radius: 50%;
+  background-color: #ddd; /* Menggunakan warna dari saran saya */
+  color: #333; /* Menggunakan warna dari saran saya */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 0.8em; /* Atau sesuaikan font-size jika 18px di .avatar sudah cukup */
+}
+
+.btn-edit,
+.btn-delete {
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  margin-right: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s ease; /* Menambahkan transisi untuk efek hover */
+}
+
+.btn-edit {
+  background: #e3f2fd;
+  color: #1976d2;
+}
+
+.btn-edit:hover {
+  background: #bbdefb; /* Efek hover */
+}
+
+.btn-delete {
+  background: #ffebee;
+  color: #d32f2f;
+}
+
+.btn-delete:hover {
+  background: #ffcdd2; /* Efek hover */
+}
+
+.empty {
+  text-align: center;
+  color: #888; /* Menggunakan warna dari Anda */
+  margin: 32px 0; /* Menggunakan margin Anda */
+  padding: 20px; /* Menambahkan padding dari saran saya */
+}
+
+/* Tambahkan di bawah file CSS-mu */
+.btn-action {
+  border: none;
+  background: #e3f2fd;
+  color: #1976d2;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  font-size: 20px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0;
+  transition: background 0.2s;
+}
+.btn-action:hover {
+  background: #bbdefb;
+}
+
+.action-menu {
+  position: absolute;
+  top: 36px;
+  right: 0;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  z-index: 10;
+  min-width: 110px;
+  display: flex;
+  flex-direction: column;
+  padding: 6px 0;
+}
+.action-menu button {
+  width: 100%;
+  border-radius: 0;
+  margin: 0;
+  text-align: left;
+  padding: 8px 16px;
+  background: none;
+  border: none;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.action-menu button.btn-edit:hover {
+  background: #e3f2fd;
+}
+.action-menu button.btn-delete:hover {
+  background: #ffcdd2;
+}
+.action-menu button.btn-label:hover {
+  background: #f3e5f5;
+}
+.action-menu .submenu-label {
+  position: relative;
+}
+.action-menu .submenu-label .submenu-list {
+  display: none;
+  position: absolute;
+  left: 100%;
+  top: 0;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  min-width: 110px;
+  z-index: 20;
+  flex-direction: column;
+  padding: 6px 0;
+}
+.action-menu .submenu-label:hover .submenu-list,
+.action-menu .submenu-label:focus-within .submenu-list {
+  display: flex;
+}
+.action-menu .submenu-list button {
+  width: 100%;
+  border-radius: 0;
+  margin: 0;
+  text-align: left;
+  padding: 8px 16px;
+  background: none;
+  border: none;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.action-menu .submenu-list button:hover {
+  background: #e3f2fd;
+}
+
+/* Sembunyikan kolom selain Name dan Aksi di mobile */
+@media (max-width: 600px) {
+  .contact-table th.hide-mobile,
+  .contact-table td.hide-mobile {
+    display: none;
+  }
+  .contact-table th, .contact-table td {
+    font-size: 15px;
+    padding: 10px 6px;
+    
+  }
+}
+
+/* Modal profil untuk mobile */
+.modal-profile-backdrop {
+  position: fixed;
+  z-index: 9999;
+  inset: 0;
+  background: rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal-profile {
+  background: #fff;
+  border-radius: 10px;
+  padding: 24px 20px;
+  min-width: 250px;
+  max-width: 90vw;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.15);
+}
+
+.avatar-clickable {
+  cursor: pointer;
+  display: inline-block;
+}
+.avatar-clickable .avatar,
+.avatar-clickable .avatar-initials {
+  border: 2px solid #1976d2;
+  transition: box-shadow 0.2s;
+}
+.avatar-clickable:hover .avatar,
+.avatar-clickable:hover .avatar-initials {
+  box-shadow: 0 0 0 2px #1976d2;
+}
+
+.profile-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+.profile-table td {
+  padding: 8px 6px;
+  border-bottom: 1px solid #eee;
+  vertical-align: top;
+}
+.profile-table td:first-child {
+  font-weight: bold;
+  width: 80px;
+  color: #1976d2;
+}
+
+.profile-field {
+  margin-bottom: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.profile-label {
+  font-weight: bold;
+  color: #1976d2;
+  margin-bottom: 2px;
+  font-size: 1em;
+}
+.profile-value {
+  font-size: 1em;
+  color: #222;
+  word-break: break-all;
+}
+
+.label-item {
+  padding: 2px 0 2px 2px;
+  border-radius: 4px;
+  transition: background 0.15s;
+}
+.label-item:hover {
+  background: #e3f0fd;
+}
+.label-item-active {
+  background: #e3f0fd;
+}
+
+@media (max-width: 600px) {
+  .mobile-detail-row td {
+    background: #f9f9f9;
+    padding-top: 0;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #eee;
+  }
+  .profile-field {
+    margin-bottom: 8px;
+  }
+  .mobile-profile-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0;
+    background: #f9f9f9;
+  }
+  .mobile-profile-table td {
+    padding: 7px 6px;
+    border-bottom: 1px solid #eee;
+    font-size: 1em;
+    vertical-align: top;
+  }
+  .mobile-profile-table td.profile-label {
+    font-weight: bold;
+    color: #1976d2;
+    width: 80px;
+    min-width: 70px;
+    max-width: 120px;
+  }
+  .contact-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    width: 100%;
+  }
+  .btn-action {
+    margin-left: auto;
+    margin-right: 0;
+  }
+}
+
+/* Pastikan container utama tidak membatasi overflow menu popup */
+.contact-list-container {
+  overflow: visible !important;
+  position: relative;
+}
+
+/* Pastikan aksi-popup-menu selalu di atas dan tidak terpotong */
+.aksi-popup-menu {
+  z-index: 9999 !important;
+}
+
+/* Jika tabel parent punya overflow-x: auto, tambahkan juga: */
+.contact-table {
+  overflow: visible !important;
+}
+
+.favorite-star {
+  transition: color 0.2s;
+}
+.favorite-star:hover {
+  color: #FFD600;
+}
+
+/* Hilangkan underline dan warna biru pada nama kontak */
+.contact-info .contact-name {
+  color: #222 !important;
+  text-decoration: none !important;
+  cursor: pointer;
+  font-weight: 500;
+}
+.contact-info .contact-name:hover {
+  color: #222 !important;
+  text-decoration: none !important;
+}
+
+/* Mobile card styles */
+.mobile-view {
+  display: none;
+}
+
+@media (max-width: 599px) {
+  .desktop-view {
+    display: none;
+  }
+  
+  .mobile-view {
+    display: block;
+  }
+}
+
+.contact-card-mobile {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border-bottom: 1px solid #e0e0e0;
+  background: white;
+  transition: background-color 0.2s;
+}
+
+.contact-card-mobile:hover {
+  background-color: #f5f5f5;
+}
+
+.contact-info-mobile {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  cursor: pointer;
+}
+
+.contact-avatar-mobile {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+
+.contact-avatar-mobile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.contact-details-mobile {
+  flex: 1;
+}
+
+.contact-name-mobile {
+  font-weight: 600;
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.contact-phone-mobile {
+  font-size: 14px;
+  color: #666;
+}
+
+.contact-actions-mobile {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-favorite-mobile,
+.btn-menu-mobile {
+  background: none;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  font-size: 18px;
+  color: #666;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.btn-favorite-mobile:hover,
+.btn-menu-mobile:hover {
+  background-color: #f0f0f0;
+}
+
+.btn-favorite-mobile {
+  color: #FFD600;
+}
+
+/* Dark theme untuk mobile */
+.theme-dark .contact-card-mobile {
+  background: #2a2a2a;
+  border-bottom-color: #444;
+}
+
+.theme-dark .contact-card-mobile:hover {
+  background-color: #333;
+}
+
+.theme-dark .contact-name-mobile {
+  color: #fff;
+}
+
+.theme-dark .contact-phone-mobile {
+  color: #ccc;
+}
+
+.theme-dark .btn-favorite-mobile,
+.theme-dark .btn-menu-mobile {
+  color: #ccc;
+}
+
+.theme-dark .btn-favorite-mobile:hover,
+.theme-dark .btn-menu-mobile:hover {
+  background-color: #444;
+}

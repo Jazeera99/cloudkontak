@@ -1,0 +1,97 @@
+/* src/styles/Auth.css */
+
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #e3f0ff 0%, #f9f9f9 100%);
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.auth-card {
+    background: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+}
+
+.auth-card h2 {
+    color: #1976d2;
+    margin-bottom: 30px;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.auth-form input[type="text"],
+.auth-form input[type="email"],
+.auth-form input[type="password"] {
+    width: calc(100% - 24px); /* Kurangi padding dari lebar total */
+    padding: 12px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.auth-form input:focus {
+    border-color: #1976d2;
+}
+
+.auth-form button {
+    padding: 14px 20px;
+    background-color: #1976d2;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(25, 118, 210, 0.3);
+}
+
+.auth-form button:hover {
+    background-color: #115293;
+    transform: translateY(-2px);
+}
+
+.auth-form button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(25, 118, 210, 0.3);
+}
+
+.auth-card p {
+    margin-top: 25px;
+    font-size: 0.95rem;
+    color: #666;
+}
+
+.auth-card p a {
+    color: #1976d2;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.auth-card p a:hover {
+    text-decoration: underline;
+}
+
+.error-message {
+    color: #d32f2f;
+    font-size: 0.9em;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    text-align: left;
+}

@@ -1,0 +1,157 @@
+/* C:\apps\www\cloudkontak\src\components\ContactForm.css */
+.photo-upload-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+  overflow: hidden; /* Tambahan */
+}
+
+.avatar-preview {
+  /* Ubah ini untuk ukuran preview yang lebih normal */
+  width: 120px;
+  height: 120px;
+  border-radius: 50%; /* Membuat gambar menjadi lingkaran */
+  object-fit: cover; /* Memastikan gambar mengisi area tanpa distorsi */
+  margin-bottom: 15px; /* Tambah sedikit jarak di bawah gambar */
+  border: 2px solid #ddd; /* Tambahkan border yang sedikit lebih tebal */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Tambahkan sedikit shadow */
+  display: block;
+  max-width: 100%; 
+}
+
+.input-photo-wrapper {
+  /* Gaya tombol unggah foto jika diperlukan */
+  margin-top: 10px; /* Memberi jarak dari gambar preview */
+}
+
+.upload-btn {
+  padding: 8px 15px;
+  background-color: #f0f0f0;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9em;
+  display: inline-block; /* Penting agar label bisa di-style seperti tombol */
+  transition: background-color 0.2s ease;
+}
+
+.upload-btn:hover {
+  background-color: #e0e0e0;
+}
+
+/* Pastikan styling untuk modal juga tetap ada jika itu di file ini */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 450px;
+  position: relative;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-size: 1.5em;
+  color: #333;
+}
+
+.modal-close-button {
+  background: none;
+  border: none;
+  font-size: 2em;
+  cursor: pointer;
+  color: #888;
+  padding: 0;
+  line-height: 1;
+}
+
+.modal-close-button:hover {
+  color: #333;
+}
+
+.modal-content form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.modal-content input[type="text"],
+.modal-content input[type="email"],
+.modal-content input[type="tel"],
+.modal-content input[type="url"],
+.modal-content select {
+  width: calc(100% - 20px); /* Adjust for padding */
+  padding: 10px;
+  margin-bottom: 5px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+.modal-content input:focus,
+.modal-content select:focus {
+  border-color: #1976d2;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(25, 118, 210, 0.2);
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.btn-add,
+.btn-cancel {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+.btn-add {
+  background-color: #1976d2;
+  color: white;
+}
+
+.btn-add:hover {
+  background-color: #115293;
+}
+
+.btn-cancel {
+  background-color: #e0e0e0;
+  color: #333;
+}
+
+.btn-cancel:hover {
+  background-color: #c0c0c0;
+}
