@@ -1,5 +1,10 @@
 c:\apps\www\cloudkontak\
-├── src/
+├── public/
+│   ├── img
+│   ├── index.html
+|── src/
+│   ├── api/
+│   │   └── kontak.js
 │   ├── components/
 │   │   ├── ContactList.jsx       
 │   │   ├── ContactAlphaFilter.jsx 
@@ -19,8 +24,12 @@ c:\apps\www\cloudkontak\
 │   │   └── NotFound.jsx         
 │   ├── services/
 │   │   └── kontak.js            
-│   ├── App.jsx                   
-│   └── main.jsx                  
-├── public/
+│   ├── App.jsx           
+│   └── index.jsx                  
 ├── package.json
-└── vite.config.js
+├── package-lock.json
+├── .gitignore
+└── README.md
+
+
+

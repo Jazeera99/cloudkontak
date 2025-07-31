@@ -150,7 +150,7 @@ function ContactPage() {
   };
 
   const handleChangeProfile = (contact) => {
-    setProfileContact(contact);
+    setProfileContact(contact); 
   };
 
   const handleSaveProfile = async (contactId, file) => {
@@ -158,6 +158,7 @@ function ContactPage() {
       const formData = new FormData();
       formData.append('avatar', file); 
 
+      const response = await uploadAvatar(formData);
 
       const newAvatarUrl = response.data.url;
 
@@ -420,7 +421,7 @@ function ContactPage() {
               className="btn-delete"
               onClick={() => {
                 setOpenMenuMobile(null);
-                onDelete(openMenuMobile);
+                setDeleting(openMenuMobile); // ← Ganti 'onDelete' dengan 'setDeleting'
               }}
             >
               <span style={{ fontWeight: 600 }}>Delete</span>

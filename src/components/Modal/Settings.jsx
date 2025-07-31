@@ -103,7 +103,6 @@ function App() {
 
   const handleSettingsSave = (newTheme, newFontSize) => {
     setTheme(newTheme);
-    setLanguage(newLanguage);
     setFontSize(newFontSize);
     setShowSettings(false);
   };

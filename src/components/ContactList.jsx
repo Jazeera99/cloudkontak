@@ -1,5 +1,5 @@
 // C:\apps\www\cloudkontak\src\components\ContactList.jsx
-import React, { useMemo, useState } from "react";
+import React, { useMemo, useState, useEffect, useRef } from "react";
 import {
   useReactTable,
   getCoreRowModel,
@@ -20,6 +20,8 @@ function ContactList({ contacts, setContacts, onEdit, onDelete, onChangeLabel, o
   const [labelModal, setLabelModal] = useState({ open: false, contact: null });
   const [labelEditRow, setLabelEditRow] = useState(null);
   const [openMenuMobile, setOpenMenuMobile] = useState(null); // null atau id kontak
+  const [openMenuId, setOpenMenuId] = useState(null);
+  const menuRef = useRef(null);
 
   // Responsive
   const [isMobile, setIsMobile] = useState(window.innerWidth < 600);
@@ -27,6 +29,17 @@ function ContactList({ contacts, setContacts, onEdit, onDelete, onChangeLabel, o
     const handleResize = () => setIsMobile(window.innerWidth < 600);
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  // useEffect untuk close menu
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setOpenMenuId(null);
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
   // Filter data
@@ -139,39 +152,23 @@ function ContactList({ contacts, setContacts, onEdit, onDelete, onChangeLabel, o
         header: "Aksi",
         id: "aksi",
         cell: ({ row }) => {
-          const [openMenu, setOpenMenu] = React.useState(false);
-          const menuRef = React.useRef();
-
-          // Tutup menu jika klik di luar
-          React.useEffect(() => {
-            if (!openMenu) return;
-            function handleClick(e) {
-              if (menuRef.current && !menuRef.current.contains(e.target)) {
-                setOpenMenu(false);
-              }
-            }
-            document.addEventListener("mousedown", handleClick);
-            return () => document.removeEventListener("mousedown", handleClick);
-          }, [openMenu]);
-
-          if (isMobile) return null;
-
+          // Sekarang bisa akses state dari parent component
           return (
-            <div style={{ position: "relative", textAlign: "center" }}>
+            <div ref={menuRef}>
               <button
                 className="aksi-dot-btn"
-                onClick={() => setOpenMenu(v => !v)}
+                onClick={() => setOpenMenuId(v => v === row.original._id ? null : row.original._id)}
                 title="Aksi"
                 aria-label="Aksi"
               >
                 &#8942;
               </button>
-              {openMenu && (
-                <div className="aksi-popup-menu" ref={menuRef}>
+              {openMenuId === row.original._id && (
+                <div className="aksi-popup-menu">
                   <button
                     className="btn-delete"
                     onClick={() => {
-                      setOpenMenu(false);
+                      setOpenMenuId(null);
                       onDelete(row.original);
                     }}
                   >
@@ -186,7 +183,7 @@ function ContactList({ contacts, setContacts, onEdit, onDelete, onChangeLabel, o
                           className={`label-item${row.original.label === label ? " label-item-active" : ""}`}
                           onClick={() => {
                             onChangeLabel(row.original, label);
-                            setOpenMenu(false);
+                            setOpenMenuId(null);
                           }}
                           style={{
                             display: "flex",
@@ -236,7 +233,7 @@ function ContactList({ contacts, setContacts, onEdit, onDelete, onChangeLabel, o
         meta: { align: "center" },
       },
     ],
-    [onEdit, onDelete, contacts, onToggleFavorite]
+    [onEdit, onDelete, contacts, onToggleFavorite, openMenuId]
   );
 
   const table = useReactTable({

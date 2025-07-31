@@ -1,47 +1,30 @@
 {
   "name": "cloudkontak",
-  "private": false,
   "version": "1.0.0",
-  "description": "Aplikasi manajemen kontak modern dengan React dan Vite",
-  "author": "Your Name <your.email@example.com>",
-  "license": "MIT",
-  "homepage": "https://yourusername.github.io/cloudkontak",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/yourusername/cloudkontak.git"
-  },
-  "bugs": {
-    "url": "https://github.com/yourusername/cloudkontak/issues"
-  },
-  "keywords": [
-    "react",
-    "vite",
-    "contacts",
-    "management",
-    "responsive",
-    "dark-theme"
-  ],
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview",
-    "deploy": "npm run build && gh-pages -d dist"
-  },
+  "private": true,
   "dependencies": {
-    "@tanstack/react-table": "^8.21.3",
-    "axios": "^1.10.0",
-    "datatables.net": "^2.3.2",
-    "datatables.net-dt": "^2.3.2",
-    "jquery": "^3.7.1",
-    "jwt-decode": "^4.0.0",
-    "react-router-dom": "^7.6.2",
-    "react-scripts": "^5.0.1",
-    "tabulator-tables": "^6.3.1"
+    "@tanstack/react-table": "^8.17.3",
+    "@testing-library/jest-dom": "^6.6.4",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^14.6.1",
+    "axios": "^1.7.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.24.1",
+    "react-scripts": "5.0.1",
+    "web-vitals": "^2.1.4"
   },
-  "devDependencies": {
-    "gh-pages": "^6.0.0"
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
   },
   "browserslist": {
     "production": [
